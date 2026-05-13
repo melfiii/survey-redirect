@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Survey</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f5f5f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1a1a1a;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    a.btn {
+      display: inline-block;
+      background: #1a1a1a;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+
+    a.btn:hover { background: #333; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Welcome to my survey</h1>
+    <p>This takes just a few minutes. Thank you for participating!</p>
+    <a class="btn" id="survey-link" href="#">Start the survey</a>
+  </div>
+
+  <script>
+    // ── Update these two URLs when the survey links change ──
+    const SURVEY_URLS = [
+      "https://quickeval.no/observer/1826",
+      "https://quickeval.no/observer/1820"
+    ];
+    // ────────────────────────────────────────────────────────
+
+    const url = SURVEY_URLS[Math.floor(Math.random() * SURVEY_URLS.length)];
+    document.getElementById("survey-link").href = url;
+  </script>
+</body>
+</html>
